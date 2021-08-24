@@ -1,7 +1,7 @@
 # Covid-19 Tracker
 
 ![default panel](src/readme_image/image1.png)
-> Home Page
+> [Home Page](https://covid-19-tracker-21736.web.app/)
 
 ## Available Scripts
 
