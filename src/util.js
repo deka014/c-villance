@@ -1,18 +1,18 @@
-import { Circle, Popup } from "react-leaflet";
-import numeral from "numeral";
+import { Circle, Popup } from 'react-leaflet'
+import numeral from 'numeral'
 
 export const sortData = (data) => {
-  const sortedData = [...data];
+  const sortedData = [...data]
 
   sortedData.sort((a, b) => {
     if (a.cases > b.cases) {
-      return -1;
+      return -1
     } else {
-      return 1;
+      return 1
     }
-  });
-  return sortedData;
-};
+  })
+  return sortedData
+}
 
 // const casesTypeColors = {
 //   cases: {
@@ -37,18 +37,18 @@ export const sortData = (data) => {
 
 const casesTypeColors = {
   cases: {
-    multiplier: 400,
-    option: { color: "#cc1034", fillColor: "#cc1034" },
+    multiplier: 150,
+    option: { color: '#cc1034', fillColor: '#cc1034' },
   },
   recovered: {
-    multiplier: 600,
-    option: { color: "#7dd71d", fillColor: "#7dd71d" },
+    multiplier: 100,
+    option: { color: '#7dd71d', fillColor: '#7dd71d' },
   },
   deaths: {
-    multiplier: 1000,
-    option: { color: "#ff6c47", fillColor: "#ff6c47" },
+    multiplier: 500,
+    option: { color: '#ff6c47', fillColor: '#ff6c47' },
   },
-};
+}
 
 export const showDataOnMap = (data, casesType) => {
   return data.map((country) => {
@@ -64,28 +64,28 @@ export const showDataOnMap = (data, casesType) => {
         }
       >
         <Popup>
-          <div className="info-container">
+          <div className='info-container'>
             <div
-              className="info-flag"
+              className='info-flag'
               style={{ backgroundImage: `url(${country.countryInfo.flag})` }}
             ></div>
-            <div className="info-name">{country.country}</div>
-            <div className="info-confirmed">
-              Cases: {numeral(country.cases).format("0,0")}
+            <div className='info-name'>{country.country}</div>
+            <div className='info-confirmed'>
+              Cases: {numeral(country.cases).format('0,0')}
             </div>
-            <div className="info-recovered">
-              Recovered: {numeral(country.recovered).format("0,0")}
+            <div className='info-recovered'>
+              Recovered: {numeral(country.recovered).format('0,0')}
             </div>
-            <div className="info-deaths">
-              Deaths: {numeral(country.deaths).format("0,0")}
+            <div className='info-deaths'>
+              Deaths: {numeral(country.deaths).format('0,0')}
             </div>
           </div>
         </Popup>
       </Circle>
-    );
-  });
-};
+    )
+  })
+}
 
 export const prettyPrintStats = (number) => {
-  return number ? `+${numeral(number).format("0.0a")}` : "Nil";
-};
+  return number ? `+${numeral(number).format('0.0a')}` : 'Nil'
+}
