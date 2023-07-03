@@ -37,11 +37,11 @@ export const sortData = (data) => {
 
 const casesTypeColors = {
   cases: {
-    multiplier: 150,
+    multiplier: 100,
     option: { color: '#cc1034', fillColor: '#cc1034' },
   },
   recovered: {
-    multiplier: 100,
+    multiplier: 70,
     option: { color: '#7dd71d', fillColor: '#7dd71d' },
   },
   deaths: {
